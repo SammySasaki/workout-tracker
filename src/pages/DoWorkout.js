@@ -45,7 +45,7 @@ const DoWorkout = () => {
         event.preventDefault();
         await logWorkout(exerciseIDs, exerciseHists, topWeights, topReps, username, name, id)
             .then(alert("Good Work!"));
-        window.location.replace('http://localhost:3000');
+        window.location.replace('https://workout-manager-ss.herokuapp.com/');
     }
 
     return (

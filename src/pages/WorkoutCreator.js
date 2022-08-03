@@ -29,7 +29,7 @@ const WorkoutCreator = () => {
     const generateWorkout = async (event) => {
         event.preventDefault();
         await createWorkout(username, workoutName, exerciseIDs, setsPer, repRanges)
-        window.location.replace('http://localhost:3000');
+        window.location.replace('https://workout-manager-ss.herokuapp.com/');
     }
 
     return (

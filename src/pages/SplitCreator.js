@@ -35,10 +35,10 @@ const SplitCreator = () => {
         } else {
             if (hasSplit) {
                 await editSplit(user, name, m, t, w, th, f, s, su);
-                window.location.replace('http://localhost:3000');
+                window.location.replace('https://workout-manager-ss.herokuapp.com/');
             } else {
                 await makeSplit(user, name, m, t, w, th, f, s, su);
-                window.location.replace('http://localhost:3000');
+                window.location.replace('https://workout-manager-ss.herokuapp.com/');
             }
         }
     }

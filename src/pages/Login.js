@@ -18,7 +18,7 @@ const Login = () => {
                     localStorage.clear();
                     localStorage.setItem('token', res.data.key);
                     localStorage.setItem('username', username);
-                    window.location.replace('http://localhost:3000');
+                    window.location.replace('https://workout-manager-ss.herokuapp.com/');
                 } else {
                     localStorage.clear();
                     setErrors(true);
