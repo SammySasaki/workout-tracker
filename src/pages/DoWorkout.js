@@ -50,33 +50,35 @@ const DoWorkout = () => {
 
     return (
         <>
-            <h1>Current Workout: {name}</h1>
-            <form onSubmit={finishedWorkout}>
-                {exerciseNames ? (exerciseNames.map((name, i) => (
-                    <li className="exercise-item" key={i}>
-                        <h3>{name}</h3>
-                        <div>Sets: {workout.sets_per[i]}</div>
-                        <div>Rep Range: {workout.rep_ranges[i]}</div>
-                        <label>
-                            Top Set Weight:
-                        <input type="number" onChange={(e) => topWeights[i] = e.target.value} />
-                        </label>
-                        <label>
-                            Top Set Reps:
-                        <input type="number" onChange={(e) => topReps[i] = e.target.value} />
-                        </label>
-                        {exerciseHists[i].data[0].max_set.length > 0 ? (
-                            <div>Previous Max Set: {exerciseHists[i].data[0].max_set[1]} x {exerciseHists[i].data[0].max_set[0]}</div>
-                        ) : (
-                            <div>No history available</div>
-                        )}
-                    </li>
-                    ))
-                ) : (
-                    <p>no exercises</p>
-                )}
-                <input type="submit" value="Finish Workout" />
-            </form>
+            <div className="App-header">Current Workout: {name}</div>
+            <div className="content">
+                <form onSubmit={finishedWorkout}>
+                    {exerciseNames ? (exerciseNames.map((name, i) => (
+                        <li className="exercise-item" key={i}>
+                            <h3>{name}</h3>
+                            <div>Sets: {workout.sets_per[i]}</div>
+                            <div>Rep Range: {workout.rep_ranges[i]}</div>
+                            <label>
+                                Top Set Weight:
+                            <input type="number" onChange={(e) => topWeights[i] = e.target.value} />
+                            </label>
+                            <label>
+                                Top Set Reps:
+                            <input type="number" onChange={(e) => topReps[i] = e.target.value} />
+                            </label>
+                            {exerciseHists[i].data[0].max_set.length > 0 ? (
+                                <div>Previous Max Set: {exerciseHists[i].data[0].max_set[1]} x {exerciseHists[i].data[0].max_set[0]}</div>
+                            ) : (
+                                <div>No history available</div>
+                            )}
+                        </li>
+                        ))
+                    ) : (
+                        <p>no exercises</p>
+                    )}
+                    <input type="submit" value="Finish Workout" />
+                </form>
+            </div>
         </>
     )
 }

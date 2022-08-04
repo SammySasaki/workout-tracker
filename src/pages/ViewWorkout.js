@@ -33,21 +33,23 @@ const ViewWorkout = () => {
 
     return (
         <>
-            <h1>Workout: {name}
+            <div className="App-header">Workout: {name}
                 <Button href={`/do-workout/${id}`}>Do Workout</Button>
-            </h1>
-            {exerciseNames.map((name, i) => (
-                <li className="exercise-item" key={i}>
-                    <h3>{name}</h3>
-                    <div>Sets: {workout.sets_per[i]}</div>
-                    <div>Reps: {workout.rep_ranges[i]}</div>
-                    {exerciseHists[i].data[0].max_set.length > 0 ? (
-                        <div>Max Set: {exerciseHists[i].data[0].max_set[1]} x {exerciseHists[i].data[0].max_set[0]}</div>
-                    ) : (
-                        <div>No history available</div>
-                    )}
-                </li>
-            ))}
+            </div>
+            <div className="content">
+                {exerciseNames.map((name, i) => (
+                    <li className="exercise-item" key={i}>
+                        <h3>{name}</h3>
+                        <div>Sets: {workout.sets_per[i]}</div>
+                        <div>Reps: {workout.rep_ranges[i]}</div>
+                        {exerciseHists[i].data[0].max_set.length > 0 ? (
+                            <div>Max Set: {exerciseHists[i].data[0].max_set[1]} x {exerciseHists[i].data[0].max_set[0]}</div>
+                        ) : (
+                            <div>No history available</div>
+                        )}
+                    </li>
+                ))}
+            </div>
         </>
     )
 }
