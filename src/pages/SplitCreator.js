@@ -44,41 +44,46 @@ const SplitCreator = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label>
-                Name:
-                <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
-            </label>
-            <label>
-                Monday:
-                <input type="text" value={m} onChange={(e) => setM(e.target.value)} />
-            </label>
-            <label>
-                Tuesday:
-                <input type="text" value={t} onChange={(e) => setT(e.target.value)} />
-            </label>
-            <label>
-                Wednesday:
-                <input type="text" value={w} onChange={(e) => setW(e.target.value)} />
-            </label>
-            <label>
-                Thursday:
-                <input type="text" value={th} onChange={(e) => setTh(e.target.value)} />
-            </label>
-            <label>
-                Friday:
-                <input type="text" value={f} onChange={(e) => setF(e.target.value)} />
-            </label>
-            <label>
-                Saturday:
-                <input type="text" value={s} onChange={(e) => setS(e.target.value)} />
-            </label>
-            <label>
-                Sunday:
-                <input type="text" value={su} onChange={(e) => setSu(e.target.value)} />
-            </label>
-            <input className="Creator-button" type="submit" value="Confirm" />
-        </form>
+        <>
+            <div className="App-header">Create Split</div>
+            <div className="Add-split">
+                <form onSubmit={handleSubmit}>
+                    <label className="Split-name">
+                        Name:
+                        <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+                    </label>
+                    <label className="Split-day">
+                        Monday:
+                        <input type="text" value={m} onChange={(e) => setM(e.target.value)} />
+                    </label>
+                    <label className="Split-day">
+                        Tuesday:
+                        <input type="text" value={t} onChange={(e) => setT(e.target.value)} />
+                    </label>
+                    <label className="Split-day">
+                        Wednesday:
+                        <input type="text" value={w} onChange={(e) => setW(e.target.value)} />
+                    </label>
+                    <label className="Split-day">
+                        Thursday:
+                        <input type="text" value={th} onChange={(e) => setTh(e.target.value)} />
+                    </label>
+                    <label className="Split-day">
+                        Friday:
+                        <input type="text" value={f} onChange={(e) => setF(e.target.value)} />
+                    </label>
+                    <label className="Split-day">
+                        Saturday:
+                        <input type="text" value={s} onChange={(e) => setS(e.target.value)} />
+                    </label>
+                    <label className="Split-day">
+                        Sunday:
+                        <input type="text" value={su} onChange={(e) => setSu(e.target.value)} />
+                    </label>
+                    <input className="Creator-button" type="submit" value="Confirm" />
+                </form>
+            </div>
+        </>
     )
 }
 

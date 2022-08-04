@@ -13,6 +13,7 @@ import { logout } from './apiCalls';
 
 function App() {
   const [isAuth, setIsAuth] = useState(false);
+  const username = localStorage.getItem('username');
 
   useEffect(() => {
     if (localStorage.getItem('token') !== null) {
@@ -32,8 +33,13 @@ function App() {
         </>
       ) : (
         <>
-          <Button onClick={logout} variant="primary" className="login-info">Log Out</Button>
-          <Button href="/" variant="primary" className="home-button">Home</Button>
+          <div className='App-header'>
+            <div className="upper-right">
+              <p>Logged in as {username} &nbsp;
+              <Button onClick={logout} variant="secondary" className="logout-button">Log Out</Button></p>
+            </div>
+            <Button href="/" variant="secondary" className="home-button">Home</Button>
+          </div>
           <Router>
             <Routes>
               <Route path="/" element={<Home />} />

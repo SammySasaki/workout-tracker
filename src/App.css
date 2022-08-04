@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-color: lightgrey;
+  min-height: 100vh;
 }
 
 .App-logo {
@@ -15,12 +17,11 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(30px + 2vmin);
   color: white;
 }
 
@@ -37,17 +38,71 @@
   }
 }
 
-.login-info {
-  position: relative;
+.add-form {
+  margin-top: 5%;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
   float: right;
-  margin-left: 1%;
+  width: 40%;
+}
+
+.add-exercise {
+  width: 100%;
+  padding: 0 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.Add-split {
+  margin-top: 5%;
+}
+
+.Split-day {
+  padding: 20px;
   font-size: 20px;
+}
+
+.Split-name {
+  padding: 20px;
+  display: block;
+  font-size: 25px;
+}
+
+.Creator-button {
+  display: block;
+  margin: auto;
+  background-color: blue;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 25px;
+}
+
+.workout-list {
+  margin-top: 5%;
+}
+
+.content {
+  margin-top: 2.5%;
+}
+
+.upper-right {
+  position: fixed;
+  right: 0;
+  top: 0;
+  font-size: calc(10px + 2vmin);
+  margin: 0.5%;
 }
 
 .home-button {
   position: fixed;
   left: 0;
   top: 0;
+  margin: 0.5%;
 }
 
 .title {
@@ -78,6 +133,7 @@ tbody {
   list-style: none;
   display: grid;
   align-items: center;
+  padding: 0;
 }
 
 .exercise-num{

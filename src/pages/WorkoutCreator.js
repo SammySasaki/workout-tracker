@@ -34,43 +34,49 @@ const WorkoutCreator = () => {
 
     return (
         <>
-            <form onSubmit={handleSubmit}>
-                <label>
-                    Exercise name:
-                    <input type="text" value={currName} onChange={(e) => setCurrName(e.target.value)} />
-                </label>
-                <label>
-                    Muscles worked(input separated by commas):
-                    <input type="text" value={currMuscles} onChange={(e) => setCurrMuscles(e.target.value.split(","))} />
-                </label>
-                <label>
-                    Equipment:
-                    <input type="text" value={currEquipment} onChange={(e) => setCurrEquipment(e.target.value)} />
-                </label>
-                <input type="submit" value="Add Exercise" />
-            </form>
-            <form onSubmit={generateWorkout}>
-                <label>
-                    Workout Name:
-                    <input type="text" value={workoutName} onChange={(e) => setWorkoutName(e.target.value)} />
-                </label>
-                <ul>
-                    {exercises.map((exercise, i) => (
-                        <div key={i}>
-                            <p>{exercise.name}</p>
-                            <label>
-                                Sets
-                                <input type="text" onChange={(e) => setsPer[i] = e.target.value} />
-                            </label>  
-                            <label>
-                                Rep Range(min - max)
-                            <input type="text" onChange={(e) => repRanges[i] = e.target.value} />
-                            </label> 
-                        </div>
-                    ))}
-                </ul>
-                <input type="submit" value="Save Workout" />
-            </form>
+            <div className="App-header">Create Workout</div>
+            <div className="add-form">
+                <h1>Add an exercise</h1>
+                <form onSubmit={handleSubmit}>
+                    <label className="add-exercise">
+                        Exercise name:
+                        <input type="text" value={currName} onChange={(e) => setCurrName(e.target.value)} />
+                    </label>
+                    <label className="add-exercise">
+                        Muscles worked(input separated by commas):
+                        <input type="text" value={currMuscles} onChange={(e) => setCurrMuscles(e.target.value.split(","))} />
+                    </label>
+                    <label className="add-exercise">
+                        Equipment:
+                        <input type="text" value={currEquipment} onChange={(e) => setCurrEquipment(e.target.value)} />
+                    </label>
+                    <input type="submit" value="Add Exercise" />
+                </form>
+            </div>
+            <div className="workout-list">
+                <form onSubmit={generateWorkout}>
+                    <label>
+                        Workout Name:
+                        <input type="text" value={workoutName} onChange={(e) => setWorkoutName(e.target.value)} />
+                    </label>
+                    <ul>
+                        {exercises.map((exercise, i) => (
+                            <div key={i}>
+                                <p>{exercise.name}</p>
+                                <label>
+                                    Sets
+                                    <input type="text" onChange={(e) => setsPer[i] = e.target.value} />
+                                </label>  
+                                <label>
+                                    Rep Range(min - max)
+                                <input type="text" onChange={(e) => repRanges[i] = e.target.value} />
+                                </label> 
+                            </div>
+                        ))}
+                    </ul>
+                    <input type="submit" value="Save Workout" />
+                </form>
+            </div>
             <h1>Exercises</h1>
             {/* <ExerciseList exercises={exercises} /> */}
         </>
