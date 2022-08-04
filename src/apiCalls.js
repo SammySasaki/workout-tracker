@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 
-axios.defaults.baseURL = 'https://workout-manager-ss.herokuapp.com';
+axios.defaults.baseURL = 'https://workout-manager-ss.herokuapp.com/api';
 export const getToken = (username, password) => {
     const data = {
         username: username,
