@@ -1,3 +1,2 @@
-web: gunicorn backend.wsgi:application --log-file - --log-level debug
-python manage.py collectstatic --noinput
-manage.py migrate
+release: python manage migrate
+web: gunicorn backend.wsgi --log-file -
