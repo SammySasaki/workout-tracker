@@ -171,7 +171,7 @@ REST_FRAMEWORK = {
     ]
 }
 
-CSRF_TRUSTED_ORIGINS = ["https://workout-manager-ss.herokuapp.com"]
+CSRF_TRUSTED_ORIGINS = ["https://workout-manager-ss.herokuapp.com", "https://workout-manager-ss.herokuapp.com/register"]
 
 AUTH_USER_MODEL = 'api.User'
 
