@@ -60,10 +60,10 @@ INSTALLED_APPS = [
 SITE_ID = 1
 
 MIDDLEWARE = [
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -171,7 +171,7 @@ REST_FRAMEWORK = {
     ]
 }
 
-CSRF_TRUSTED_ORIGINS = ["https://workout-manager-ss.herokuapp.com", "https://workout-manager-ss.herokuapp.com/register"]
+CSRF_TRUSTED_ORIGINS = ["https://workout-manager-ss.herokuapp.com"]
 
 AUTH_USER_MODEL = 'api.User'
 
