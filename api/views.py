@@ -122,3 +122,4 @@ class CurrentUserView(APIView):
         user = Token.objects.get(key=pk).user
         serializer = UserSerializer(user)
         return Response(serializer.data)
+

@@ -14,7 +14,7 @@ urlpatterns = [
     path('splits/<pk>', views.SplitDetail.as_view()),
     path('logged_workout', views.LoggedWorkoutList.as_view()),
     path('logged_workout/<pk>', views.LoggedWorkoutDetail.as_view()),
-    path('dj-rest-auth/', csrf_exempt(include('dj_rest_auth.urls'))),
-    path('dj-rest-auth/registration/', csrf_exempt(include('dj_rest_auth.registration.urls'))),
+    path('dj-rest-auth/', include('dj_rest_auth.urls')),
+    path('dj-rest-auth/registration/', include('dj_rest_auth.registration.urls')),
     path('users/<pk>', views.CurrentUserView.as_view()),
 ]
