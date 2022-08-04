@@ -95,6 +95,9 @@ TEMPLATES = [
             ],
         },
     },
+    {
+    'DIRS':[ BASE_DIR/'frontend/build' ]
+    }
 ]
 
 WSGI_APPLICATION = 'backend.wsgi.application'
