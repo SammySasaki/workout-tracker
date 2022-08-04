@@ -171,6 +171,8 @@ REST_FRAMEWORK = {
     ]
 }
 
+CSRF_TRUSTED_ORIGINS = ["https://workout-manager-ss.herokuapp.com"]
+
 AUTH_USER_MODEL = 'api.User'
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
