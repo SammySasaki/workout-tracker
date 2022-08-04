@@ -12,6 +12,13 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import dj_database_url
+import os
+import django_heroku
+from os.path import join, dirname
+from dotenv import load_dotenv
+
+dotenv_path = join(dirname(__file__), '.env')
+load_dotenv(dotenv_path)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,8 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-%-0o%b&_zj%vt+ofj)bfvie5#^)_y!)slv3a#*t2&gr!e0y%9+'
-
+SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
@@ -98,18 +104,17 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-       'ENGINE': 'django.db.backends.postgresql',
-       'NAME': 'workoutdb',
-       'USER': 'postgres',
-       'PASSWORD': 'databasepw',
-       'HOST': '127.0.0.1',
-       'PORT': '5432',
-   }
+#     'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': 'workoutdb',
+#        'USER': 'postgres',
+#        'PASSWORD': 'databasepw',
+#        'HOST': '127.0.0.1',
+#        'PORT': '5432',
+#    }
 }
 
-db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(db_from_env)
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -163,10 +168,7 @@ REST_FRAMEWORK = {
 
 AUTH_USER_MODEL = 'api.User'
 
-import os
-
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
 
-import django_heroku
 django_heroku.settings(locals())
