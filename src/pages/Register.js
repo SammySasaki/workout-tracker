@@ -40,25 +40,27 @@ const Register = () => {
 
     return (
         <>
-            {passwordErrors !== null && <h2>{passwordErrors}</h2>}
-            {usernameError === true && <h2>username already exists</h2>}
-            {dontMatch === true && <h2>passwords dont match</h2>}
-            <form onSubmit={handleSubmit}>
-                <label>
-                    Enter Username:
-                    <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
-                </label>
-                <label>
-                    Enter Password:
-                    <input type="password" value={password1} onChange={(e) => setPassword(e.target.value)} />
-                </label>
-                <label>
-                    Confirm Password:
-                    <input type="password" value={password2} onChange={(e) => setPassword2(e.target.value)} />
-                </label>
-                <input className="Creator-button" type="submit" value="Register" />
-            </form>
-            <p>Already have an account? <Button href="/">Login</Button></p>
+            <div className="login-form">
+                {passwordErrors !== null && <h2>{passwordErrors}</h2>}
+                {usernameError === true && <h2>username already exists</h2>}
+                {dontMatch === true && <h2>passwords dont match</h2>}
+                <form onSubmit={handleSubmit}>
+                    <label className='form-line'>
+                        Enter Username:
+                        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+                    </label>
+                    <label className='form-line'>
+                        Enter Password:
+                        <input type="password" value={password1} onChange={(e) => setPassword(e.target.value)} />
+                    </label>
+                    <label className='form-line'>
+                        Confirm Password:
+                        <input type="password" value={password2} onChange={(e) => setPassword2(e.target.value)} />
+                    </label>
+                    <input className="btn btn-primary login-button" type="submit" value="Register" />
+                    <p>Already have an account? <Button className="login-button" href="/">Login</Button></p>
+                </form>
+            </div>
         </>
     )
 }

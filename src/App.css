@@ -47,6 +47,27 @@
   width: 40%;
 }
 
+.login-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background-color: white;
+  padding: 50px 0px;
+  width: 40%;
+  margin-left: 30%;
+  transform: translate(0, 50%);
+}
+
+.form-line {
+  display: block;
+  padding: 7px;
+}
+
+.login-button {
+  margin: 10px;
+}
+
 .add-exercise {
   width: 100%;
   padding: 0 20px;
@@ -71,6 +92,7 @@
   display: block;
   font-size: 25px;
 }
+
 
 .Creator-button {
   display: block;

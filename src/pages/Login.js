@@ -28,25 +28,26 @@ const Login = () => {
 
     return (
         <div>
-            {errors === true && <h2>Cannot log in with provided credentials</h2>}
-            <form onSubmit={handleSubmit}>
-                <label>
-                    Username:
-                    <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
-                </label>
-                <label>
-                    Password:
-                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                </label>
-                <input className="Creator-button" type="submit" value="Login" />
-            </form>
-            <Button href='/register' variant="success">
-                Register new account
-            </Button>
+            <div className="login-form">
+                {errors === true && <h2>Cannot log in with provided credentials</h2>}
+                <form onSubmit={handleSubmit}>
+                    <label>
+                        Username:
+                        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+                    </label>
+                    <label>
+                        Password:
+                        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    </label>
+                    <div>
+                        <input className="btn btn-primary login-button" type="submit" value="Login" />
+                        <Button className="login-button" href='/register' variant="success">
+                        Register new account
+                        </Button>
+                    </div>
+                </form>
+            </div>
         </div>
-    // <Button href={LOGIN_URI} variant="success">
-    //     Log in to Spotify
-    // </Button>
 )};
 
 export default Login;
