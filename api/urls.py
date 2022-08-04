@@ -1,14 +1,6 @@
 from django.urls import path, include
 from api import views
-
-# ROUTES
-# /api/workouts GET, POST
-# /api/workouts/:id GET, PUT, DELETE
-# /api/exercises GET, POST
-# /api/exercises/:id GET, DELETE
-# /api/split GET, PUT, DELETE
-# /api/log GET, POST
-# /api/log/:id GET, PUT, DELETE
+from django.views.decorators.csrf import csrf_exempt
 
 urlpatterns = [
     path('exercises', views.ExerciseList.as_view()),
@@ -22,7 +14,7 @@ urlpatterns = [
     path('splits/<pk>', views.SplitDetail.as_view()),
     path('logged_workout', views.LoggedWorkoutList.as_view()),
     path('logged_workout/<pk>', views.LoggedWorkoutDetail.as_view()),
-    path('dj-rest-auth/', include('dj_rest_auth.urls')),
-    path('dj-rest-auth/registration/', include('dj_rest_auth.registration.urls')),
+    path('dj-rest-auth/', csrf_exempt(include('dj_rest_auth.urls'))),
+    path('dj-rest-auth/registration/', csrf_exempt(include('dj_rest_auth.registration.urls'))),
     path('users/<pk>', views.CurrentUserView.as_view()),
 ]
