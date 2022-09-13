@@ -62,7 +62,7 @@ const WorkoutCreator = () => {
                     <ul>
                         {exercises.map((exercise, i) => (
                             <div key={i}>
-                                <p>{exercise.name}</p>
+                                <h1>{exercise.name}</h1>
                                 <label>
                                     Sets
                                     <input type="text" onChange={(e) => setsPer[i] = e.target.value} />
